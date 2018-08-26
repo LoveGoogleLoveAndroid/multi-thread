@@ -1,5 +1,3 @@
-# multi-thread
-
 ### 线程的生命周期
 #### 创建：通过new创建一个线程
 #### 就绪：通过调用start方法使得线程进入等待队列
@@ -58,27 +56,12 @@ volatile不能保证原子性，比如number++的表达式是三个步骤，这�
 1. 读取number的值
 2. 将number加1
 3. 写入最新的number的值
-另外，语言层面final也可以保证内存可见性
 
 #### 保证number自增操作原子性的方法
 1. 使用synchronized关键字
 2. 使用ReentrantLock
 3. 使用AtomicInteger
 
-#### 安全的使用volatile
-必须同时满足以下两点：
-1. 对变量的写入操作不依赖其当前值
-> 不满足：number++, count = count * 2等
-> 满足： boolean 变量等
-2. 该变量没有包含在具体其他变量的不变式中
-> 不满足：low < up
-
-#### synchronized VS volatile
-* volatile不需要加锁，比synchronized更轻量级，不会阻塞线程
-* 从内存可见性角度，volatile读相当于加锁，写相当于解锁
-* synchronized既能保证可见性，又能保证原子性，volatile只能保证可见性，无法保证原子性
-即使没有保证可见性的措施，很多时候共享变量依然能够在主内存和工作内存得到及时的更新，是因为一般只有在短时间高并发的情况下才会出现变量得不到及时
-更新的情况，因为CPU在执行时会很快刷新缓存，所以一般很难看到这种问题，也难以预测
 
 #### as-if-serial
 无论如何重排序，程序执行的结果与代码顺序执行的结果一致（Java编译器，运行时和处理器都会保证Java在单线程下遵循as-if-serial语义）
