@@ -1,4 +1,4 @@
-package Eternity;
+package basic.Eternity;
 
 // 能量守恒定律：能量不会凭空创造，只会从一个地方转移到另一个地方
 public class EnergySystem {

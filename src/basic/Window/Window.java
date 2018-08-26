@@ -1,4 +1,4 @@
-package Window;
+package basic.Window;
 
 public class Window {
     private static final int THREAD_COUNT = 5;

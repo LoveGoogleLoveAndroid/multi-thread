@@ -1,4 +1,4 @@
-package Visibility;
+package basic.Visibility;
 
 public class Synchronized {
     private boolean ready = false;

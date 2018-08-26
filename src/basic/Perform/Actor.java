@@ -1,4 +1,4 @@
-package Perform;
+package basic.Perform;
 
 public class Actor extends Thread{
 

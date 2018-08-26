@@ -1,4 +1,4 @@
-package Dynasty;
+package basic.Dynasty;
 
 public class ArmyRunnable implements Runnable {
 

@@ -1,4 +1,4 @@
-package Eternity;
+package basic.Eternity;
 
 public class Eternity {
     private static final int BOX_AMOUNT = 10;

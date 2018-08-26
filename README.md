@@ -85,6 +85,9 @@ volatile不能保证原子性，比如number++的表达式是三个步骤，这�
 #### as-if-serial
 无论如何重排序，程序执行的结果与代码顺序执行的结果一致（Java编译器，运行时和处理器都会保证Java在单线程下遵循as-if-serial语义）
 
+## 2 Immutable 模式
+类确保实例状态保持不变，不需要用synchronized进行保护，在访问实例时不需要执行耗时的互斥处理，可以提供程序性能
+
 ## 3 Guarded Suspension模式
 如果执行现在的处理有问题，就让线程进行等待，来保证实例的安全性，或也可称为guarded wait、busy wait, spin lock、polling(进行舆论调查的意思，即反复检查某个事件是否发生)等
 * guarded wait：由于线程使用wait是待在等待队列中停止执行的，所以不会浪费Java虚拟机的处理时间

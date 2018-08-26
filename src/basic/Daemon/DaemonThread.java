@@ -1,4 +1,4 @@
-package Daemon;
+package basic.Daemon;
 
 import java.util.Scanner;
 

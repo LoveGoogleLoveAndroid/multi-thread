@@ -1,4 +1,4 @@
-package Visibility;
+package basic.Visibility;
 
 import java.util.concurrent.locks.ReentrantLock;
 

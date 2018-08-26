@@ -1,4 +1,4 @@
-package Eternity;
+package basic.Eternity;
 
 public class EnergyTransferTask implements Runnable {
 

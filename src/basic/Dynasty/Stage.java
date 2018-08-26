@@ -1,11 +1,11 @@
-package Dynasty;
+package basic.Dynasty;
 
 public class Stage extends Thread {
     @Override
     public void run() {
         ArmyRunnable armyTaskDynasty = new ArmyRunnable();
         ArmyRunnable armyTaskRevolt = new ArmyRunnable();
-        Thread armyDynasty = new Thread(armyTaskDynasty, "Dynasty");
+        Thread armyDynasty = new Thread(armyTaskDynasty, "basic/Dynasty");
         Thread armyRevolt = new Thread(armyTaskRevolt, "Revolt");
         System.out.println("the war is beginning, please watching.............................");
         // 王朝军队和起义军开始战争

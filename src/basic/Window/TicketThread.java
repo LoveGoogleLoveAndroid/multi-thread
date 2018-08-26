@@ -1,4 +1,4 @@
-package Window;
+package basic.Window;
 
 // 用Runnable方式创建线程可以避免Thread方式由于Java单继承特性带来的缺陷
 // Runnable的代码可以被多个线程共享，适合于多个线程处理同一资源的情况
