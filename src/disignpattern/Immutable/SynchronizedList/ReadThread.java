@@ -12,12 +12,12 @@ public class ReadThread extends Thread {
 
     @Override
     public void run() {
-        synchronized (list) {
+        //synchronized (list) {
             while (true) {
                 for (int n : list) {
                     System.out.println(n);
                 }
             }
-        }
+        //}
     }
 }
