@@ -27,6 +27,12 @@ Java中的多线程及常用设计模式
 ### 通过JSTACK查看线程快照
 命令：jstack -l 7926
 
+### 线程的原子性
+* 基本类型、引用类型的赋值和引用都是原子操作
+* long和double的赋值和引用非原子操作
+* long和double要保证原子性，可以将其放入synchronized中操作，或者声明为volatile类型
+* Java提供了java.util.concurrent.atomic包，如AutomicInteger，AutomicLong等，是通过封装volatile功能而得到的类库
+
 ### 线程的可见性
 要实现共享变量的可见性，必须保证两点：
 * 线程修改后的共享变量能够及时从工作内存刷新到主内存
@@ -84,6 +90,18 @@ volatile不能保证原子性，比如number++的表达式是三个步骤，这�
 
 #### as-if-serial
 无论如何重排序，程序执行的结果与代码顺序执行的结果一致（Java编译器，运行时和处理器都会保证Java在单线程下遵循as-if-serial语义）
+## 1 Single Threaded Execution模式
+
+Single Threaded Execution模式会降低程序性能，需要减少临界区个数，缩小临界区范围
+* 进入synchronized方法，线程需要获取对象的锁，需要花费时间
+* 当一个线程进入临界区处理时，其他想要进入临界区的线程就会阻塞，即线程冲突
+
+
+### 死锁
+满足如下3个条件时，就会发生，只要破坏其一，就可以防止死锁发生
+* 存在多个共享资源
+* 线程在持有某个共享资源的同时，还想获取其他共享资源
+* 获取共享资源的顺序不固定
 
 ## 2 Immutable 模式
 类确保实例状态保持不变，不需要用synchronized进行保护，在访问实例时不需要执行耗时的互斥处理，可以提供程序性能
