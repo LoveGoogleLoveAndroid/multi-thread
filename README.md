@@ -151,3 +151,4 @@ LinkedBlockingQueue-基于链表的BlockingQueue
 PriorityBlockingQueue-带有优先级的BlockingQueue
 DelayBlockingQueue-定时间之后才可以take的BlockingQueue
 SynchronousBlockingQueue-直接传递的BlockingQueue，如果Producer先put，在Consumer take之前，Producer一直阻塞，相反，如果Consumer先take, 在Producer put之前，Consumer一直阻塞
+
