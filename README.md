@@ -137,3 +137,17 @@ ready = true;
 
 ### Timeout模式
 在Balking模式立刻返回和Guarded Suspension模式一直等待之间，在守护条件成立之前一直等待，一旦守护条件满足，立刻执行，如果守护条件一直不满足，则抛出超时异常
+
+## 5 Producer-Consumer模式
+生产者和消费者可以是多对多，多对一，一对一的方式，对于传递的数据的顺序，可以以队列、栈、优先级队列等方式进行
+wait、sleep、join都需要等待，被notify、notifyAll唤醒，如果此时调用interrupt方法，可以终止这个等待，不用再等notify、notifyAll，直接从等待队列出来，
+从而抛出InterruptedException的异常，需要注意的是在调用wait时已经释放了锁，该线程在重新获取锁之后，才会抛出InterruptedException的异常
+* notify、notifyAll是Object的方法，唤醒的是该实例的等待队列中的线程，而不是指定的线程，唤醒后会继续执行wait的下一条语句，执行时必须获取实例的锁
+* interrupt方法是Thread的方法，可以直接指定线程唤醒，当线程正在sleep或者wait或者join时，就抛出InterruptedException的异常，执行时不需要获取要取消线程的锁
+* 调用interrupt方法并不会立即抛出异常，它只是改变了线程的中断状态而已，即线程是否被中断的状态，这个异常是在调用sleep、wait、join时这些方法内部对线程的中断状态进行检查才抛出了的
+
+ArrayBlockingQueue-基于数组的BlockingQueue
+LinkedBlockingQueue-基于链表的BlockingQueue
+PriorityBlockingQueue-带有优先级的BlockingQueue
+DelayBlockingQueue-定时间之后才可以take的BlockingQueue
+SynchronousBlockingQueue-直接传递的BlockingQueue，如果Producer先put，在Consumer take之前，Producer一直阻塞，相反，如果Consumer先take, 在Producer put之前，Consumer一直阻塞
