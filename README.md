@@ -147,8 +147,12 @@ wait、sleep、join都需要等待，被notify、notifyAll唤醒，如果此时�
 * 调用interrupt方法并不会立即抛出异常，它只是改变了线程的中断状态而已，即线程是否被中断的状态，这个异常是在调用sleep、wait、join时这些方法内部对线程的中断状态进行检查才抛出了的
 
 ArrayBlockingQueue-基于数组的BlockingQueue
+
 LinkedBlockingQueue-基于链表的BlockingQueue
+
 PriorityBlockingQueue-带有优先级的BlockingQueue
+
 DelayBlockingQueue-定时间之后才可以take的BlockingQueue
+
 SynchronousBlockingQueue-直接传递的BlockingQueue，如果Producer先put，在Consumer take之前，Producer一直阻塞，相反，如果Consumer先take, 在Producer put之前，Consumer一直阻塞
 
