@@ -22,13 +22,21 @@ public class Blackhole {
                 {
                     synchronized (this)
                     {
-                        this.setName("Locked");
+                        //this.setName("Locked");
                         this.notifyAll();
                     }
                     System.out.println("enter endless loop");
-                    while (true)
-                    {
+                    //while (true)
+                    //{
                         //
+                    //}
+                    try
+                    {
+                        this.join();
+                    }
+                    catch (InterruptedException e)
+                    {
+
                     }
                 }
             }
@@ -36,10 +44,10 @@ public class Blackhole {
 
         synchronized (thread)
         {
-            thread.setName("thread");
+            //thread.setName("thread");
             thread.start();
 
-            while (thread.getName().equals("thread"))
+            /*while (thread.getName().equals("thread"))
             {
                 System.out.println("thread enter waiting");
                 try
@@ -50,6 +58,15 @@ public class Blackhole {
                 {
 
                 }
+            }*/
+            try
+            {
+                System.out.println("thread enter waiting");
+                thread.wait();
+            }
+            catch (InterruptedException e)
+            {
+
             }
         }
     }
