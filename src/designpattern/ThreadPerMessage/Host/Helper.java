@@ -17,7 +17,7 @@ public class Helper {
 
         for (int i = 0; i < count; i++) {
             slowly();
-            System.out.println(" Helper handling " + i + " " + Thread.currentThread().getName());
+            //System.out.println(" Helper handling " + i + " " + Thread.currentThread().getName());
             System.out.print(c);
         }
 
