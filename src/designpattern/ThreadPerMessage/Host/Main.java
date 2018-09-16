@@ -1,18 +1,13 @@
 package designpattern.ThreadPerMessage.Host;
 
-import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.Executors;
 
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("main begin");
 
-        Host host = new Host(new ThreadFactory() {
-            @Override
-            public Thread newThread(Runnable r) {
-                return new Thread(r);
-            }
-        });
+        Host host = new Host(Executors.defaultThreadFactory());
         host.request(10, 'A');
         host.request(15, 'B');
         host.request(20, 'C');
