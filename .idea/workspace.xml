@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce87d619-5d1b-4936-a2d8-95f056274181" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Helper.java" afterPath="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Helper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Host.java" afterPath="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Host.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Main.java" afterPath="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Main.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/Channel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/ClientThread.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/Main.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/Request.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/WorkerThreads.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,12 +20,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="365">
-                <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+              <first_editor relative-caret-position="329">
+                <caret line="165" column="0" lean-forward="true" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -29,40 +33,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Main.java">
+      <file leaf-file-name="Request.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/Request.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="46" />
-              <folding>
-                <element signature="e#320#321#0" expanded="true" />
-                <element signature="e#372#373#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Helper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Helper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+              <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Host.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Host.java">
+      <file leaf-file-name="ClientThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/ClientThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-              <folding>
-                <element signature="e#239#240#0" expanded="true" />
-                <element signature="e#277#278#0" expanded="true" />
-                <element signature="e#491#492#0" expanded="true" />
-                <element signature="e#550#551#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="340">
+              <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Channel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/Channel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-392">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,13 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/disignpattern/GuardedSuspension/RequestQueue/RequestQueue.java" />
-        <option value="$PROJECT_DIR$/src/disignpattern/GuardedSuspension/Talk/Main.java" />
-        <option value="$PROJECT_DIR$/src/disignpattern/GuardedSuspension/Talk/TalkThread.java" />
-        <option value="$PROJECT_DIR$/src/disignpattern/Immutable/Person.java" />
-        <option value="$PROJECT_DIR$/src/disignpattern/Immutable/PersonThread.java" />
-        <option value="$PROJECT_DIR$/src/disignpattern/Immutable/Main.java" />
-        <option value="$PROJECT_DIR$/src/disignpattern/Immutable/Person/PersonThread.java" />
         <option value="$PROJECT_DIR$/src/disignpattern/Immutable/SynchronizedList/WriteThread.java" />
         <option value="$PROJECT_DIR$/src/disignpattern/Immutable/SynchTrial/Synch.java" />
         <option value="$PROJECT_DIR$/src/disignpattern/Immutable/SynchTrial/NotSynch.java" />
@@ -134,10 +133,17 @@
         <option value="$PROJECT_DIR$/src/designpattern/ReadWriteLock/Database/AssignThread.java" />
         <option value="$PROJECT_DIR$/src/designpattern/ReadWriteLock/Database/Main.java" />
         <option value="$PROJECT_DIR$/src/designpattern/ReadWriteLock/Database/Database.java" />
-        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Helper.java" />
         <option value="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Host.java" />
         <option value="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Main.java" />
-        <option value="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Helper.java" />
+        <option value="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Blackhole/Main.java" />
+        <option value="$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Blackhole/Blackhole.java" />
+        <option value="$PROJECT_DIR$/src/designpattern/WorkerThread/Channer/Request.java" />
+        <option value="$PROJECT_DIR$/src/designpattern/WorkerThread/Channer/ClientThread.java" />
+        <option value="$PROJECT_DIR$/src/designpattern/WorkerThread/Channer/WorkerThreads.java" />
+        <option value="$PROJECT_DIR$/src/designpattern/WorkerThread/Channer/Channel.java" />
+        <option value="$PROJECT_DIR$/src/designpattern/WorkerThread/Channer/Main.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -202,7 +208,30 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="designpattern" type="462c0819:PsiDirectoryNode" />
               <item name="ThreadPerMessage" type="462c0819:PsiDirectoryNode" />
+              <item name="Blackhole" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultiThread" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultiThread" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="designpattern" type="462c0819:PsiDirectoryNode" />
+              <item name="ThreadPerMessage" type="462c0819:PsiDirectoryNode" />
               <item name="Host" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultiThread" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultiThread" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="designpattern" type="462c0819:PsiDirectoryNode" />
+              <item name="WorkerThread" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultiThread" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultiThread" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="designpattern" type="462c0819:PsiDirectoryNode" />
+              <item name="WorkerThread" type="462c0819:PsiDirectoryNode" />
+              <item name="Channel" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -228,15 +257,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main (2)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="designpattern.ProducerConsumer.Cake.*" />
+          <option name="PATTERN" value="designpattern.ThreadPerMessage.Blackhole.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="designpattern.ProducerConsumer.Cake.Main" />
+      <option name="MAIN_CLASS_NAME" value="designpattern.ThreadPerMessage.Blackhole.Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -256,25 +285,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="designpattern.ReadWriteLock.Database.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="MultiThread" />
-      <envs />
-    </configuration>
-    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="designpattern.ProducerConsumer.Wait.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="designpattern.ProducerConsumer.Wait.Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -438,6 +448,25 @@
       <module name="MultiThread" />
       <envs />
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="designpattern.WorkerThread.Channel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="designpattern.WorkerThread.Channel.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="MultiThread" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -520,19 +549,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main (2)" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Main (4)" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Main (5)" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Main (3)" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main (5)" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main (3)" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Main (2)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main (3)" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main (5)" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main (4)" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main (2)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main (2)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main (3)" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main (5)" />
       </list>
     </recent_temporary>
   </component>
@@ -561,7 +590,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4170354" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4170354" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -589,55 +618,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/designpattern/GuardedSuspension/Talk/TalkThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/designpattern/GuardedSuspension/RequestQueue/ClientThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/designpattern/Immutable/Person/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/designpattern/Immutable/Person/PersonThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/designpattern/Immutable/SynchTrial/Synch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/designpattern/Immutable/SynchTrial/NotSynch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/designpattern/Immutable/SynchronizedList/WriteThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/designpattern/Immutable/SynchTrial/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -912,16 +892,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Blackhole/Blackhole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="877">
+          <caret line="63" column="59" lean-forward="false" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
+          <folding>
+            <element signature="e#431#1145#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Host.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        <state relative-caret-position="467">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
-            <element signature="e#239#240#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Blackhole/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/WorkerThreads.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/ClientThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/WorkerThread/Channel/Channel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-392">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -934,30 +988,11 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="365">
-            <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <first_editor relative-caret-position="329">
+            <caret line="165" column="0" lean-forward="true" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/designpattern/ThreadPerMessage/Host/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="46" />
-          <folding>
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

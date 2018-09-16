@@ -164,3 +164,6 @@ SynchronousBlockingQueue-直接传递的BlockingQueue，如果Producer先put，�
 * 对操作顺序没有要求
 * 不需要返回值
 
+## 8 Worker-Thread模式
+如果每次发出工作请求都要创建新线程就太浪费了，可以事先启动执行工作的线程，然后使用Producer-Consumer模式将
+表示工作内容的实例传递给工作线程，而且不应该让工作线程持有每项工作固有的信息，就是说它可以处理不同的请求
