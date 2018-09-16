@@ -146,18 +146,21 @@ wait、sleep、join都需要等待，被notify、notifyAll唤醒，如果此时�
 * interrupt方法是Thread的方法，可以直接指定线程唤醒，当线程正在sleep或者wait或者join时，就抛出InterruptedException的异常，执行时不需要获取要取消线程的锁
 * 调用interrupt方法并不会立即抛出异常，它只是改变了线程的中断状态而已，即线程是否被中断的状态，这个异常是在调用sleep、wait、join时这些方法内部对线程的中断状态进行检查才抛出了的
 
-ArrayBlockingQueue-基于数组的BlockingQueue
-
-LinkedBlockingQueue-基于链表的BlockingQueue
-
-PriorityBlockingQueue-带有优先级的BlockingQueue
-
-DelayBlockingQueue-定时间之后才可以take的BlockingQueue
-
+ArrayBlockingQueue-基于数组的BlockingQueue  
+LinkedBlockingQueue-基于链表的BlockingQueue  
+PriorityBlockingQueue-带有优先级的BlockingQueue  
+DelayBlockingQueue-定时间之后才可以take的BlockingQueue  
 SynchronousBlockingQueue-直接传递的BlockingQueue，如果Producer先put，在Consumer take之前，Producer一直阻塞，相反，如果Consumer先take, 在Producer put之前，Consumer一直阻塞
 
 ## 6 Read-Write Lock模式
 一般来说，互斥会降低程序性能，如果把针对写入的互斥和读取的互斥分别处理，利用读取操作线程之间不会冲突的特性来提高性能，当满足以下条件时，可以考虑使用读写锁模式
 * 读取操作繁重，耗时
-* 读取频率比写入频率高时
+* 读取频率比写入频率高时  
 读写锁是一种逻辑锁，相对于Java语言对每个实例提供的物理锁而言
+
+## 7 Thread-Per-Message模式
+每个命令或请求分配一个线程，将委托端和执行端相分离，适用于以下情况：
+* 提高响应性，缩短延迟时间
+* 对操作顺序没有要求
+* 不需要返回值
+
