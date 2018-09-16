@@ -1,9 +1,16 @@
 package designpattern.ReadWriteLock.Data;
 
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
 public class Data {
     private final char[] buffer;
-    private final ReadWriteLocks lock = new ReadWriteLocks();
+    //private final ReadWriteLocks lock = new ReadWriteLocks();
+    private final ReadWriteLock lock = new ReentrantReadWriteLock(true/* fair */);
+    private final Lock readLock = lock.readLock();
+    private final Lock writeLock = lock.writeLock();
 
     public Data(int size) {
         this.buffer = new char[size];
@@ -15,25 +22,29 @@ public class Data {
 
     public char[] read() throws InterruptedException
     {
-        lock.readLock();
+        //lock.readLock();
+        readLock.lock();
 
         try {
             return doRead();
         }
         finally {
-            lock.readUnlock();
+            //lock.readUnlock();
+            readLock.unlock();
         }
     }
 
     public void write(char c) throws InterruptedException
     {
-        lock.writeLock();
+        //lock.writeLock();
+        writeLock.lock();
 
         try {
             doWrite(c);
         }
         finally {
-            lock.writeUnlock();
+            //lock.writeUnlock();
+            writeLock.unlock();
         }
     }
 
