@@ -156,3 +156,8 @@ DelayBlockingQueue-定时间之后才可以take的BlockingQueue
 
 SynchronousBlockingQueue-直接传递的BlockingQueue，如果Producer先put，在Consumer take之前，Producer一直阻塞，相反，如果Consumer先take, 在Producer put之前，Consumer一直阻塞
 
+## 6 Read-Write Lock模式
+一般来说，互斥会降低程序性能，如果把针对写入的互斥和读取的互斥分别处理，利用读取操作线程之间不会冲突的特性来提高性能，当满足以下条件时，可以考虑使用读写锁模式
+* 读取操作繁重，耗时
+* 读取频率比写入频率高时
+读写锁是一种逻辑锁，相对于Java语言对每个实例提供的物理锁而言
