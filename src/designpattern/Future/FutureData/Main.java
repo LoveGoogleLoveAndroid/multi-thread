@@ -87,4 +87,31 @@ public class Main {
      data3 = CCCCCCCCCCCCCCCCCCCC
      main end.
      */
+
+    /**
+     *
+     * 使用FutureTask的效果
+     * main begin.
+     request(10, A) begin.
+     request(10, A) end.
+     request(15, B) begin.
+     request(15, B) end.
+     request(20, C) begin.
+     request(20, C) end.
+     main otherJob begin.
+     making RealData(15, B) begin.
+     making RealData(20, C) begin.
+     making RealData(10, A) begin.
+     making RealData(10, A) end.
+     making RealData(15, B) end.
+     making RealData(20, C) end.
+     main otherJob end.
+     main FutureData getContent
+     data1 = AAAAAAAAAA
+     main FutureData getContent
+     data2 = BBBBBBBBBBBBBBB
+     main FutureData getContent
+     data3 = CCCCCCCCCCCCCCCCCCCC
+     main end.
+     */
 }
