@@ -1,7 +1,11 @@
 package designpattern.Future.Retriever;
 
-public class AsyncContentImpl implements Content{
-    private SyncContentImpl syncContent;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+
+public class AsyncContentImpl extends FutureTask<SyncContentImpl> implements Content{
+    /*private SyncContentImpl syncContent;
     private boolean ready = false;
 
     public synchronized void setContent(SyncContentImpl syncContent)
@@ -9,11 +13,15 @@ public class AsyncContentImpl implements Content{
         this.syncContent = syncContent;
         this.ready = true;
         notifyAll();
+    }*/
+
+    public AsyncContentImpl(Callable<SyncContentImpl> callable) {
+        super(callable);
     }
 
-    public synchronized byte[] getBytes()
+    public /*synchronized*/ byte[] getBytes()
     {
-        while (!ready)
+        /*while (!ready)
         {
             try {
                 wait();
@@ -22,8 +30,22 @@ public class AsyncContentImpl implements Content{
             {
 
             }
+        }*/
+        byte[] bytes = null;
+        try
+        {
+            bytes = get().getBytes();
+        }
+        catch (InterruptedException e)
+        {
+
+        }
+        catch (ExecutionException e)
+        {
+
         }
 
-        return syncContent.getBytes();
+        //return syncContent.getBytes();
+        return bytes;
     }
 }
