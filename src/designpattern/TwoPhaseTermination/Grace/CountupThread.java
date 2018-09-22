@@ -2,9 +2,9 @@ package designpattern.TwoPhaseTermination.Grace;
 
 public class CountupThread extends /*Thread*/ GracefulThread {
     private long count = 0;
-    private volatile boolean isRunning = true;
+    /*private volatile boolean isRunning = true;
     private long start = 0;
-/*
+
     // 由外部调用，发出终止请求
     public void shutdownRequest()
     {
