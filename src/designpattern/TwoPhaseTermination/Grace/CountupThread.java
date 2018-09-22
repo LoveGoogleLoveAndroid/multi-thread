@@ -2,15 +2,18 @@ package designpattern.TwoPhaseTermination.Grace;
 
 public class CountupThread extends Thread {
     private long count = 0;
-
     private volatile boolean isRunning = true;
+    private long start = 0;
 
     // 由外部调用，发出终止请求
     public void shutdownRequest()
     {
         isRunning = false;
+        start = System.currentTimeMillis();
         // 如果发出终止请求时，线程正在sleep，线程也不会开始终止处理，这样程序的响应性会下降，调用interrupt可以中断sleep
         // 如果发出终止请求时，线程正在wait，线程也不会从等待队列出来，必须使用interrupt对线程下达中断wait的指示
+        // 如果调用interrupt，doShutdown: duration = 0 milli seconds，但是会CountupThread run: got a InterruptedException
+        // 如果不调用interrupt，doShutdown: duration = 31 milli seconds
         interrupt();
     }
 
@@ -32,6 +35,7 @@ public class CountupThread extends Thread {
     private void doShutdown()
     {
         System.out.println("doShutdown: count = " + count);
+        System.out.println("doShutdown: duration = " + (System.currentTimeMillis() - start) + " milli seconds");
     }
 
     @Override
