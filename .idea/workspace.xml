@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce87d619-5d1b-4936-a2d8-95f056274181" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CountDownLatch/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CountDownLatch/MyTask.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/GracefulThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CyclicBarrier/Main.java" afterPath="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CyclicBarrier/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CyclicBarrier/MyTask.java" afterPath="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CyclicBarrier/MyTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/CountupThread.java" afterPath="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/CountupThread.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,8 +23,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="296">
-                <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+              <first_editor relative-caret-position="369">
+                <caret line="182" column="0" lean-forward="true" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -35,30 +37,34 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
               <caret line="18" column="65" lean-forward="true" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CountDownLatch/MyTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2036#2037#0" expanded="true" />
+                <element signature="e#2102#2103#0" expanded="true" />
+                <marker date="1537608144000" expanded="false" signature="1004:1019" ph=" { " />
+                <marker date="1537608144000" expanded="false" signature="1037:1043" ph=" }" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CountDownLatch/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+            <state relative-caret-position="234">
+              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GracefulThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/GracefulThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="33" column="55" lean-forward="false" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#291#292#0" expanded="true" />
+                <element signature="e#324#325#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,9 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/designpattern/Balking/Timeout/Main.java" />
-        <option value="$PROJECT_DIR$/src/designpattern/ProducerConsumer/Exchanger/ProduceThread.java" />
-        <option value="$PROJECT_DIR$/src/designpattern/ProducerConsumer/Exchanger/Main.java" />
         <option value="$PROJECT_DIR$/src/designpattern/ProducerConsumer/Exchanger/ConsumerThread.java" />
         <option value="$PROJECT_DIR$/src/designpattern/ProducerConsumer/Cake/Main.java" />
         <option value="$PROJECT_DIR$/src/designpattern/ProducerConsumer/Cake/Table.java" />
@@ -130,15 +133,18 @@
         <option value="$PROJECT_DIR$/src/designpattern/Future/Retriever/AyncContentImpl.java" />
         <option value="$PROJECT_DIR$/src/designpattern/Future/Retriever/AsyncContentImpl.java" />
         <option value="$PROJECT_DIR$/src/designpattern/Future/Retriever/Retriever.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/Main.java" />
-        <option value="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/CountupThread.java" />
         <option value="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CountDownLatch/MyTask.java" />
         <option value="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CountDownLatch/Main.java" />
+        <option value="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CyclicBarrier/Main.java" />
+        <option value="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CyclicBarrier/MyTask.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/GracefulThread.java" />
+        <option value="$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/CountupThread.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="63" />
     <option name="width" value="2048" />
     <option name="height" value="1022" />
@@ -206,6 +212,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="designpattern" type="462c0819:PsiDirectoryNode" />
               <item name="TwoPhaseTermination" type="462c0819:PsiDirectoryNode" />
+              <item name="CyclicBarrier" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultiThread" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultiThread" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="designpattern" type="462c0819:PsiDirectoryNode" />
+              <item name="TwoPhaseTermination" type="462c0819:PsiDirectoryNode" />
               <item name="Grace" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -233,7 +247,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (5)">
+  <component name="RunManager" selected="Application.Main (4)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -272,6 +286,25 @@
       <module name="MultiThread" />
       <envs />
     </configuration>
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="designpattern.TwoPhaseTermination.CyclicBarrier.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="designpattern.TwoPhaseTermination.CyclicBarrier.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="MultiThread" />
+      <envs />
+    </configuration>
     <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -299,25 +332,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="designpattern.TwoPhaseTermination.CountDownLatch.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="MultiThread" />
-      <envs />
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="designpattern.ThreadPerMessage.Host.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="designpattern.ThreadPerMessage.Host.Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -563,19 +577,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Main (2)" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Main (4)" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Main (5)" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main (2)" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Main (4)" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Main (5)" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Main (3)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main (5)" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main (4)" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main (4)" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main (2)" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main (4)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main (3)" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main (5)" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main (4)" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -593,7 +607,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="63" width="2048" height="1022" extended-state="0" />
+    <frame x="0" y="23" width="2048" height="1062" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -604,7 +618,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4170354" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3993644" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -632,27 +646,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/designpattern/Balking/Timeout/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/designpattern/Balking/Timeout/Host.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="945" column="26" lean-forward="false" selection-start-line="945" selection-start-column="26" selection-end-line="945" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/designpattern/ProducerConsumer/Cake/EatThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -971,14 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/util/concurrent/CountDownLatch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -995,15 +980,33 @@
         <state relative-caret-position="324">
           <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CountDownLatch/MyTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        <state relative-caret-position="242">
+          <caret line="20" column="78" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CyclicBarrier/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/CyclicBarrier/MyTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1013,8 +1016,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="296">
-            <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <first_editor relative-caret-position="369">
+            <caret line="182" column="0" lean-forward="true" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
@@ -1027,11 +1030,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/GracefulThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="55" lean-forward="false" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+          <folding>
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#324#325#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/designpattern/TwoPhaseTermination/Grace/CountupThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="65" lean-forward="true" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-          <folding />
+          <folding>
+            <element signature="e#2036#2037#0" expanded="true" />
+            <element signature="e#2102#2103#0" expanded="true" />
+            <marker date="1537608144000" expanded="false" signature="1004:1019" ph=" { " />
+            <marker date="1537608144000" expanded="false" signature="1037:1043" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>

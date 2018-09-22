@@ -1,10 +1,10 @@
 package designpattern.TwoPhaseTermination.Grace;
 
-public class CountupThread extends Thread {
+public class CountupThread extends /*Thread*/ GracefulThread {
     private long count = 0;
     private volatile boolean isRunning = true;
     private long start = 0;
-
+/*
     // 由外部调用，发出终止请求
     public void shutdownRequest()
     {
@@ -57,5 +57,17 @@ public class CountupThread extends Thread {
         finally {
             doShutdown();
         }
+    }*/
+
+    @Override
+    protected void doWork() throws InterruptedException {
+        count++;
+        System.out.println("doWork: count = " + count);
+        Thread.sleep(500);
+    }
+
+    @Override
+    protected void doShutdown() {
+        System.out.println("doShutdown: count = " + count);
     }
 }

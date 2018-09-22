@@ -177,6 +177,8 @@ SynchronousBlockingQueue-直接传递的BlockingQueue，如果Producer先put，�
 * 一定会进行终止处理（生存性）
 * 发出终止请求后尽快进行终止处理（响应性）
 
-
+CountDownLatch：想让某个线程等待指定的线程终止时可以使用join，但是join只能是一次性的操作，如果要执行N次，可以使用倒计时门阀
+CyclicBarrier： 周期性的创建出屏障，在屏障解除之前，线程无法继续前进，解除条件时到达屏障处的线程个数达到了构造函数
+指定的个数，然后这些线程一起继续同时继续执行
 
 
