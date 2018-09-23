@@ -186,3 +186,34 @@ CyclicBarrier： 周期性的创建出屏障，在屏障解除之前，线程无
 与强调吞吐量相比，该模式更加看重可复用性：
 * 不改变结构即可实现程序
 * 没有显示的互斥处理，编程犯错的可能性较小
+
+## 12 Active-Object模式
+综合了Producer-Consumer模式、Thread-Per-Message模式、Future模式等各种模式
+* MakerClientThread: 发出请求"生成字符串"的线程
+* DisplayClientThread: 发出请求"显示字符串"的线程
+* ActiveObject: 定义主动对象的接口
+* ActiveObjectFactory: 创建主动对象的类
+* Proxy: 将方法调用转为MethondRequest对象的类（实现了ActiveObject的接口）
+* ScheduleThread: 调用execute处理MethodRequest对象的线程
+* ActivationQueue: 按顺序保存MethodRequest对象的类
+* MethodRequest: 表示请求的抽象类
+* MakeStringRequest: MethodRequest的子类，生成字符串
+* DisplayStringRequest: MethodRequest的子类，显示字符串
+* Result: 表示执行结果的抽象类
+* FutureResult: Result的子类，在Future模式中表示执行结果的类
+* RealResult: Result的子类，表示实际的执行结果的类
+* Servant: 执行实际处理的类（实现了ActiveObject的接口）
+
+如果除了Client单向调用Servant外，还希望实现双向调用（即将执行结果从Servant返回给Client），以及处理的委托顺序与执行顺序的相互独立，
+就可以使用ActiveObject模式；我们将来自Client的委托实现为对Proxy的调用，Proxy会将该委托转换为ConcreteMethodRequest的一个对象，
+然后通过Scheduler保存在ActivationQueue中，而实际的处理并不是在Client的线程，Scheduler通过ConcreteMethodRequest将处理委托给
+Servant，为了实现双向调用，使用了Future模式，ActiveObject模式组成了一个具有以下特征的"主动对象"：
+* 接收来自外部的异步请求
+* 能够自由的调度请求
+* 可以单线程执行实际的处理
+* 可以返回执行结果
+* 拥有独立的线程
+
+在使用时，必须注意问题的粒度，即问题的大小，如"生成字符串"和"显示字符串"的粒度太小，不太适合用此模式，因为无法忽略Proxy创建
+ConcreteMethodRequest，以及与ActivationQueue交互产生的性能开销，但是有利于理解该模式；当问题粒度很小时，可以使用
+Guarded Suspension模式
