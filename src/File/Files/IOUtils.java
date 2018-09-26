@@ -1,10 +1,12 @@
 package File.Files;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class IOUtils {
-    private static void printHex(String fileName) throws IOException
+    private static void printHex(final String fileName) throws IOException
     {
         FileInputStream in = new FileInputStream(fileName);
         int b;
@@ -27,7 +29,7 @@ public class IOUtils {
         in.close();
     }
 
-    private static void printHexByByteArray(String fileName) throws IOException
+    private static void printHexByByteArray(final String fileName) throws IOException
     {
         FileInputStream in = new FileInputStream(fileName);
         byte[] buf = new byte[1024];
@@ -52,9 +54,68 @@ public class IOUtils {
         }
     }
 
+    private static void fileOutStreamTest(final String fileName) throws IOException
+    {
+        File file = new File(fileName);
+        if (!file.exists())
+        {
+            file.createNewFile();
+        }
+        FileOutputStream out = new FileOutputStream(file);
+        //char ch = 'A';
+        //System.out.println("A.length = " + );
+        out.write('A'); // 写入A的低8位
+        out.write('B');
+
+        int a = 10; //  write 只能写8位，int 4个字节需要写4次
+        out.write(a >>> 24);
+        out.write(a >>> 16);
+        out.write(a >>> 8);
+        out.write(a >>> 0);
+
+        byte[] china = "中国".getBytes("gbk");
+        out.write(china);
+        out.close();
+
+        printHex(fileName);
+    }
+
+    public static void copyFile(final File src, final File dest) throws IOException
+    {
+        if (!src.exists())
+        {
+            throw new IllegalArgumentException("file " + src + " does not exist.");
+        }
+
+        if (!src.isFile())
+        {
+            throw new IllegalArgumentException(src + " is not a file.");
+        }
+
+        FileInputStream in = new FileInputStream(src);
+        FileOutputStream out = new FileOutputStream(dest);
+        byte[] buf = new byte[1024];
+        int len;
+        while ((len = in.read(buf, 0, buf.length)) != -1)
+        {
+            out.write(buf, 0, len);
+            out.flush();
+        }
+
+        in.close();
+        out.close();
+    }
+
+
     public static void main(String[] args) throws IOException{
-        final String FILE_PATH = "/Users/sky/work/java/MultiThread/README.md";
+        //final String FILE_PATH = "/Users/sky/work/java/MultiThread/README.md";
         //printHex(FILE_PATH);
-        printHexByByteArray(FILE_PATH);
+        //printHexByByteArray(FILE_PATH);
+
+        //final String FILE_OUTPUT = "/Users/sky/work/java/MultiThread/output.txt";
+        //fileOutStreamTest(FILE_OUTPUT);
+        final String FILE_OUTPUT_SRC = "/Users/sky/work/java/MultiThread/output.txt";
+        final String FILE_OUTPUT_DES = "/Users/sky/work/java/MultiThread/output_des.txt";
+        copyFile(new File(FILE_OUTPUT_SRC), new File(FILE_OUTPUT_DES));
     }
 }

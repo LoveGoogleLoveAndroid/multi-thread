@@ -15,6 +15,6 @@ out.write(int b)； // 写入一个Int的低8位，即byte到输出流
 out.write(byte[] buf); 
 out.write(byte[] buf, int start, int size);
 ```
-5. FileInputStream、FileOutputStream实现了在文件上读取数据
+5. FileInputStream、FileOutputStream实现了在文件上读写数据
 
 ## 字符流
