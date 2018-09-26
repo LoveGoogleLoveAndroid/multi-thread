@@ -1,9 +1,6 @@
 package File.Files;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class IOUtils {
     private static void printHex(final String fileName) throws IOException
@@ -106,6 +103,67 @@ public class IOUtils {
         out.close();
     }
 
+    private static void dataOutStreamTest(final String fileName) throws IOException
+    {
+        File file = new File(fileName);
+        if (!file.exists())
+        {
+            file.createNewFile();
+        }
+
+        DataOutputStream dos = new DataOutputStream(new FileOutputStream(file));
+        dos.writeInt(10);
+        dos.writeInt(-10);
+
+        dos.writeLong(20L);
+        dos.writeLong(-20L);
+
+        dos.writeDouble(30.11);
+        dos.writeDouble(-30.11);
+
+        dos.writeUTF("中国");
+        dos.writeUTF("I love U");
+
+        dos.writeChars("我爱你");
+        dos.writeChars("I like U");
+
+        // 添加一个结束符
+        dos.writeChar('\0');
+
+        dos.close();
+    }
+
+    private static void dataInputStreamTest(final String fileName) throws IOException
+    {
+        DataInputStream dis = new DataInputStream(new FileInputStream(fileName));
+        int i = dis.readInt();
+        System.out.println(i);
+        i = dis.readInt();
+        System.out.println(i);
+
+        long l = dis.readLong();
+        System.out.println(l);
+        l = dis.readLong();
+        System.out.println(l);
+
+        double d = dis.readDouble();
+        System.out.println(d);
+        d = dis.readDouble();
+        System.out.println(d);
+
+        String utf8 = dis.readUTF();
+        System.out.println(utf8);
+        utf8 = dis.readUTF();
+        System.out.println(utf8);
+
+        char chars;
+        while ( (chars = dis.readChar()) != '\0' ){
+            System.out.print(chars);
+        }
+
+        dis.close();
+    }
+
 
     public static void main(String[] args) throws IOException{
         //final String FILE_PATH = "/Users/sky/work/java/MultiThread/README.md";
@@ -114,8 +172,12 @@ public class IOUtils {
 
         //final String FILE_OUTPUT = "/Users/sky/work/java/MultiThread/output.txt";
         //fileOutStreamTest(FILE_OUTPUT);
-        final String FILE_OUTPUT_SRC = "/Users/sky/work/java/MultiThread/output.txt";
-        final String FILE_OUTPUT_DES = "/Users/sky/work/java/MultiThread/output_des.txt";
-        copyFile(new File(FILE_OUTPUT_SRC), new File(FILE_OUTPUT_DES));
+
+        //final String FILE_OUTPUT_SRC = "/Users/sky/work/java/MultiThread/output.txt";
+        //final String FILE_OUTPUT_DES = "/Users/sky/work/java/MultiThread/output_des.txt";
+        //copyFile(new File(FILE_OUTPUT_SRC), new File(FILE_OUTPUT_DES));
+        final String FILE_NAME = "/Users/sky/work/java/MultiThread/dos.dat";
+        dataOutStreamTest(FILE_NAME);
+        dataInputStreamTest(FILE_NAME);
     }
 }

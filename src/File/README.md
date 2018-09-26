@@ -16,5 +16,7 @@ out.write(byte[] buf);
 out.write(byte[] buf, int start, int size);
 ```
 5. FileInputStream、FileOutputStream实现了在文件上读写数据
+6. DataInputStream、DataOutputStream是对FileInputStream、FileOutputStream流的扩展
+可以更加方便的读写int、long、double等数据类型
 
 ## 字符流
