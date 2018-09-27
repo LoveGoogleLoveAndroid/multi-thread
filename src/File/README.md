@@ -18,5 +18,12 @@ out.write(byte[] buf, int start, int size);
 5. FileInputStream、FileOutputStream实现了在文件上读写数据
 6. DataInputStream、DataOutputStream是对FileInputStream、FileOutputStream流的扩展
 可以更加方便的读写int、long、double等数据类型
-
+7. BufferedInputStream、BufferedOutputStream提供了带缓冲区的读写操作，会提高IO性能
 ## 字符流
+1. 编码
+2. Java中的文本char是16位无符号整数，是字符的UNICODE编码（双字节编码）
+文件是byte的数据序列，文本文件是文本char序列按照某种编码（UTF-8, UTF-16BE, GBK）序列化位byte
+的存储
+3. 字符流Reader、Write是一次处理一个字符，底层仍然是基本的字节序列，操作的都是文本文件
+InputStreamReader完成byte流解析为char流，按照编码解析
+OutputStreamWriter完成char流到byte流，按照编码解析

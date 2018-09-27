@@ -77,7 +77,8 @@ public class IOUtils {
         printHex(fileName);
     }
 
-    public static void copyFile(final File src, final File dest) throws IOException
+    // 单字节带缓冲的拷贝  1M file copy operation -> 3 milli-seconds
+    private static void copyFile(final File src, final File dest) throws IOException
     {
         if (!src.exists())
         {
@@ -96,11 +97,62 @@ public class IOUtils {
         while ((len = in.read(buf, 0, buf.length)) != -1)
         {
             out.write(buf, 0, len);
-            out.flush();
+            out.flush();    // recommend
         }
 
         in.close();
         out.close();
+    }
+
+    // 单字节不带缓冲的拷贝   1M file copy operation -> 2075 milli-seconds
+    private static void copyFileByByte(final File src, final File dest) throws IOException
+    {
+        if (!src.exists())
+        {
+            throw new IllegalArgumentException("file " + src + " does not exist.");
+        }
+
+        if (!src.isFile())
+        {
+            throw new IllegalArgumentException(src + " is not a file.");
+        }
+
+        FileInputStream in = new FileInputStream(src);
+        FileOutputStream out = new FileOutputStream(dest);
+        int c;
+        while ((c = in.read()) != -1)
+        {
+            out.write(c);
+            out.flush();    // recommend
+        }
+
+        in.close();
+        out.close();
+    }
+
+    // 带缓冲的拷贝    1M file copy operation -> 1513 milli-seconds
+    private static void copyFileByBuffer(final File src, final File dest) throws IOException
+    {
+        if (!src.exists())
+        {
+            throw new IllegalArgumentException("file " + src + " does not exist.");
+        }
+
+        if (!src.isFile())
+        {
+            throw new IllegalArgumentException(src + " is not a file.");
+        }
+
+        BufferedInputStream bis = new BufferedInputStream(new FileInputStream(src));
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(dest));
+        int c;
+        while ((c = bis.read()) != -1)
+        {
+            bos.write(c);
+            bos.flush();    // must
+        }
+        bis.close();
+        bos.close();
     }
 
     private static void dataOutStreamTest(final String fileName) throws IOException
@@ -164,6 +216,31 @@ public class IOUtils {
         dis.close();
     }
 
+    private static void inputStreamReaderTest(final String fileName) throws IOException
+    {
+        FileInputStream in = new FileInputStream(fileName);
+        InputStreamReader isr = new InputStreamReader(in, "utf-8");
+        FileOutputStream out = new FileOutputStream(fileName + "1");
+        OutputStreamWriter osw = new OutputStreamWriter(out, "utf-8");
+        int c;
+        /*
+        while ((c = isr.read()) != -1)
+        {
+            System.out.print((char)c);
+        }*/
+        char[] buffer = new char[1024];
+        while ((c = isr.read(buffer, 0, buffer.length)) != -1)
+        {
+            String s = new String(buffer, 0, c);
+            System.out.print(s);
+            osw.write(buffer, 0, buffer.length);
+            osw.flush();
+        }
+
+        in.close();
+        isr.close();
+    }
+
 
     public static void main(String[] args) throws IOException{
         //final String FILE_PATH = "/Users/sky/work/java/MultiThread/README.md";
@@ -173,11 +250,18 @@ public class IOUtils {
         //final String FILE_OUTPUT = "/Users/sky/work/java/MultiThread/output.txt";
         //fileOutStreamTest(FILE_OUTPUT);
 
-        //final String FILE_OUTPUT_SRC = "/Users/sky/work/java/MultiThread/output.txt";
-        //final String FILE_OUTPUT_DES = "/Users/sky/work/java/MultiThread/output_des.txt";
-        //copyFile(new File(FILE_OUTPUT_SRC), new File(FILE_OUTPUT_DES));
-        final String FILE_NAME = "/Users/sky/work/java/MultiThread/dos.dat";
-        dataOutStreamTest(FILE_NAME);
-        dataInputStreamTest(FILE_NAME);
+        /*final String FILE_OUTPUT_SRC = "/Users/sky/work/java/MultiThread/marry_src.swf";
+        final String FILE_OUTPUT_DES = "/Users/sky/work/java/MultiThread/marry_dest.swf";
+        long start = System.currentTimeMillis();
+        copyFileByByte(new File(FILE_OUTPUT_SRC), new File(FILE_OUTPUT_DES));
+        long end = System.currentTimeMillis();
+        System.out.println("duration of copying file: " + (end - start) + " milli seconds");*/
+
+        //final String FILE_NAME = "/Users/sky/work/java/MultiThread/dos.dat";
+        //dataOutStreamTest(FILE_NAME);
+        //dataInputStreamTest(FILE_NAME);
+
+        final  String FILE_NAME = "./src/File/README.md";
+        inputStreamReaderTest(FILE_NAME);
     }
 }
