@@ -27,3 +27,6 @@ out.write(byte[] buf, int start, int size);
 3. 字符流Reader、Write是一次处理一个字符，底层仍然是基本的字节序列，操作的都是文本文件
 InputStreamReader完成byte流解析为char流，按照编码解析
 OutputStreamWriter完成char流到byte流，按照编码解析
+4. FileReader和FileWriter是用来读取/写入字符文件的便捷类，但是无法指定编码类型  
+FileReader: 使用带有指定文件的String参数的构造方法。创建该输入流对象，并关联源文件  
+FileWriter: 创建字符输出流类对象和已存在的文件相关联。文件不存在的话，并创建

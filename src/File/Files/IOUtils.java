@@ -233,12 +233,29 @@ public class IOUtils {
         {
             String s = new String(buffer, 0, c);
             System.out.print(s);
-            osw.write(buffer, 0, buffer.length);
+            osw.write(buffer, 0, c);
             osw.flush();
         }
 
         in.close();
         isr.close();
+    }
+
+    private static void fileReaderTest(final String fileName) throws IOException
+    {
+        FileReader fr = new FileReader(fileName);
+        FileWriter fw = new FileWriter(fileName + "1", false);  // append
+        char[] buffer = new char[1024];
+        int c;
+        while ((c = fr.read(buffer, 0, buffer.length)) != -1)
+        {
+            System.out.print(buffer);
+            fw.write(buffer, 0, c);
+            fw.flush();
+        }
+
+        fr.close();
+        fw.close();
     }
 
 
@@ -261,7 +278,10 @@ public class IOUtils {
         //dataOutStreamTest(FILE_NAME);
         //dataInputStreamTest(FILE_NAME);
 
-        final  String FILE_NAME = "./src/File/README.md";
-        inputStreamReaderTest(FILE_NAME);
+        //final  String FILE_NAME = "./src/File/README.md";
+        //inputStreamReaderTest(FILE_NAME);
+
+        final  String FILE_NAME = "/Users/sky/work/java/MultiThread/output.txt";
+        fileReaderTest(FILE_NAME);
     }
 }
