@@ -30,3 +30,7 @@ OutputStreamWriter完成char流到byte流，按照编码解析
 4. FileReader和FileWriter是用来读取/写入字符文件的便捷类，但是无法指定编码类型  
 FileReader: 使用带有指定文件的String参数的构造方法。创建该输入流对象，并关联源文件  
 FileWriter: 创建字符输出流类对象和已存在的文件相关联。文件不存在的话，并创建
+5. 字符流的过滤器
+BufferedReader: 一次读一行  
+BufferedWriter/PrintWriter: 一次写一行
+

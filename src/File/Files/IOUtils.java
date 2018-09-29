@@ -258,6 +258,31 @@ public class IOUtils {
         fw.close();
     }
 
+    private static void bufferedReaderTest(final String fileName) throws IOException
+    {
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader(
+                        new FileInputStream(fileName),  "gbk"));
+        /*BufferedWriter bw = new BufferedWriter(
+                new OutputStreamWriter(
+                        new FileOutputStream(fileName + "1")));*/
+        PrintWriter pw = new PrintWriter(fileName + "1");
+        String line;
+        while ((line = br.readLine()) != null)
+        {
+            System.out.println(line);   // 不会自动换行
+            /*bw.write(line);
+            bw.newLine();
+            bw.flush();*/
+            pw.println(line);
+            pw.flush();
+        }
+
+        br.close();
+        //bw.close();
+        pw.close();
+    }
+
 
     public static void main(String[] args) throws IOException{
         //final String FILE_PATH = "/Users/sky/work/java/MultiThread/README.md";
@@ -281,7 +306,10 @@ public class IOUtils {
         //final  String FILE_NAME = "./src/File/README.md";
         //inputStreamReaderTest(FILE_NAME);
 
+        //final  String FILE_NAME = "/Users/sky/work/java/MultiThread/output.txt";
+        //fileReaderTest(FILE_NAME);
+
         final  String FILE_NAME = "/Users/sky/work/java/MultiThread/output.txt";
-        fileReaderTest(FILE_NAME);
+        bufferedReaderTest(FILE_NAME);
     }
 }
